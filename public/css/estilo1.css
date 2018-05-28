@@ -1,0 +1,30 @@
+h7, .h7 {
+  font-size: 1.60rem;
+  font-family: Copperplate Gothic Light, sans-serif;
+  font-weight: bold;
+}
+
+#filtrado {
+	border-style: ridge;
+	border-width: 1px;
+	border-color: #000000;
+}
+
+#contenedor_mapa{
+	height: 300px;
+	width: 1500px;
+}
+
+#campo{
+	height: 100%;
+	width: 100%;
+}
+
+hr, .hr {
+	 width: 100%; 
+	 border-top: 1px;
+}
+
+#navbar_1 {
+	  background-color: #EAEDED  ;
+}

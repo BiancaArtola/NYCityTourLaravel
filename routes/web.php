@@ -11,6 +11,10 @@
 |
 */
 
+//Route::get('/','main@index');
+
 Route::get('/', function () {
-    return view('welcome');
+	$request = Request::create('/api/recorridos', 'GET');
+	$response = Route::dispatch($request);
+	return view('welcome', [ 'title' => 'Laravel Sal\'s Pizza', 'recos' => $response]);
 });
