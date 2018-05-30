@@ -80,13 +80,13 @@ return [
 
         'mongodb' => [
             'driver'   => 'mongodb',
-            'host'     => env('DB_HOST', 'localhost'),
-            'port'     => env('DB_PORT', 27017),
-            'database' => env('DB_DATABASE'),
-            'username' => env('DB_USERNAME'),
-            'password' => env('DB_PASSWORD'),
+            'host'     =>  'ds014648.mlab.com',
+            'port'     => 14648,
+            'database' => 'recorridos',
+            'username' => 'user',
+            'password' =>'user',
             'options'  => [
-            'database' => 'admin' // sets the authentication database required by mongo 3
+            'database' => 'recorridos' // sets the authentication database required by mongo 3
                         ]
     ],
 

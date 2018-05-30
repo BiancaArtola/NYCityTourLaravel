@@ -12,9 +12,11 @@
 */
 
 //Route::get('/','main@index');
-
+use App\Recorridos;
 Route::get('/', function () {
-	$request = Request::create('/api/recorridos', 'GET');
-	$response = Route::dispatch($request);
-	return view('welcome', [ 'title' => 'Laravel Sal\'s Pizza', 'recos' => $response]);
+	//$request = Request::create('/api/recorridos', 'GET');
+	//$response = Route::dispatch($request);
+	$response=Recorridos::all();
+	$data = json_decode($response);
+	return view('welcome', [ 'title' => 'Laravel Sal\'s Pizza', 'recos' => $data]);
 });

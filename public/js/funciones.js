@@ -5,23 +5,7 @@ var user_id;
 var lastOpenedInfoWindow;
 
 $(function() { 
-    //alert("entre a la funcin de inicio");
-    window.fbAsyncInit = function() {
-      //alert("entre al callback");
-      FB.init({
-        appId      : '863010233882857',
-        cookie     : true,
-        xfbml      : true,
-        version    : 'v3.0'
-      });
-      FB.AppEvents.logPageView();
-      FB.getLoginStatus(function(response) {
-       // alert("ESTOY EN GET STAT");
-         status=response.status;
-         if(status==='connected'){
-         user_id=response.authResponse.userID;
-         //alert("hice el cambio: "+user_id);
-        }
+    
          $.get("./api/recorridos", function (Recorridos) 
           {
           recorridos=Recorridos;      
@@ -40,13 +24,7 @@ $(function() {
          // alert("3 el userid aca es "+user_id);
 
        });
-      FB.Event.subscribe('auth.logout', logout_event);
-      FB.Event.subscribe('auth.login', login_event);
-      FB.Event.subscribe('comment.create',
-       function(response) {});
-
-    }
-});
+     
 
 
 function initMap() {
@@ -205,6 +183,7 @@ function mostrarRecorridos(cumplen){
 
 
 function cargarEnMapa(nombre){  
+  alert(nombre);
   var reco = obtenerRecorrido(nombre);
   clearOverlays(); 
 

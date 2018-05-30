@@ -81,10 +81,27 @@
         </div>
         <div class="col-md-10" id="no_filtrado">
             <div class="row">
-                <div class="col-md-2"></div>
-                <div class="col-md-8">
-                    <div class="h7" id="textoFiltrado">Nuestros recorridos m&aacute;s visitados</div>
-                        <?php echo e($recos) ?>
+                <div class="h7" id="textoFiltrado">Nuestros recorridos m&aacute;s visitados</div> 
+            </div>
+                
+
+                   
+                     <div class="row">
+                        @foreach ($recos as $reco)
+                        <div class="col-md-4">
+                                <div class="card" >
+                                  <img class="card-img-top" src= "{{$reco->puntos[0]->imagen}}">
+                                  <div class="card-body">
+                                    <h5 class="card-title">{{ $reco->nombre }}</h5>
+                                    <p class="card-text" align='justify'>{{$reco->descripcion_breve}}</p>
+                                    <a href="#" class="btn btn-secondary" onclick= "cargarEnMapa('{{$reco->nombre}}')" >Cargar en mapa</a>
+                                  </div>
+                                </div>
+
+                        </div> 
+
+                        @endforeach
+                    </div>
                 </div>
                 <div class="col-md-2"></div>
             </div>
