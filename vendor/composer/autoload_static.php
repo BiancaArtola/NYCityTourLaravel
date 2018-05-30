@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInite611cc5fa718efc855f805a69c380b10
+class ComposerStaticInit64b919ae60b185c6f6214f645fee7921
 {
     public static $files = array (
         '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
@@ -15,9 +15,13 @@ class ComposerStaticInite611cc5fa718efc855f805a69c380b10
         '5255c38a0faeba867671b61dfda6d864' => __DIR__ . '/..' . '/paragonie/random_compat/lib/random.php',
         'f0906e6318348a765ffb6eb24e0d0938' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Foundation/helpers.php',
         '58571171fd5812e6e447dce228f52f4d' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Support/helpers.php',
+<<<<<<< HEAD
+=======
         '3a37ebac017bc098e9a86b35401e7a68' => __DIR__ . '/..' . '/mongodb/mongodb/src/functions.php',
         '6124b4c8570aa390c21fafd04a26c69f' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/deep_copy.php',
+>>>>>>> 10fc3741e98fd9240e61a68f19909200b8c34286
         '801c31d8ed748cfa537fa45402288c95' => __DIR__ . '/..' . '/psy/psysh/src/functions.php',
+        '6124b4c8570aa390c21fafd04a26c69f' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/deep_copy.php',
     );
 
     public static $prefixLengthsPsr4 = array (
@@ -117,8 +121,8 @@ class ComposerStaticInite611cc5fa718efc855f805a69c380b10
         'phpDocumentor\\Reflection\\' => 
         array (
             0 => __DIR__ . '/..' . '/phpdocumentor/reflection-common/src',
-            1 => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src',
-            2 => __DIR__ . '/..' . '/phpdocumentor/type-resolver/src',
+            1 => __DIR__ . '/..' . '/phpdocumentor/type-resolver/src',
+            2 => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src',
         ),
         'XdgBaseDir\\' => 
         array (
@@ -3771,10 +3775,10 @@ class ComposerStaticInite611cc5fa718efc855f805a69c380b10
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInite611cc5fa718efc855f805a69c380b10::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInite611cc5fa718efc855f805a69c380b10::$prefixDirsPsr4;
-            $loader->prefixesPsr0 = ComposerStaticInite611cc5fa718efc855f805a69c380b10::$prefixesPsr0;
-            $loader->classMap = ComposerStaticInite611cc5fa718efc855f805a69c380b10::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInit64b919ae60b185c6f6214f645fee7921::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit64b919ae60b185c6f6214f645fee7921::$prefixDirsPsr4;
+            $loader->prefixesPsr0 = ComposerStaticInit64b919ae60b185c6f6214f645fee7921::$prefixesPsr0;
+            $loader->classMap = ComposerStaticInit64b919ae60b185c6f6214f645fee7921::$classMap;
 
         }, null, ClassLoader::class);
     }
