@@ -26,6 +26,13 @@ $(function() {
        });
      
 
+function oyenteCerrar(nombre){
+  if(window.confirm("Desea eliminar "+nombre+"?"))
+  {
+    alert("ELIMINACION");
+  }
+  
+  }
 
 function initMap() {
   // Create a map object and specify the DOM element for display.

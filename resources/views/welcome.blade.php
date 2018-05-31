@@ -89,7 +89,8 @@
                      <div class="row">
                         @foreach ($recos as $reco)
                         <div class="col-md-4">
-                                <div class="card" >
+                                <div class="card"  >
+                                <a pull-right class="close" onclick="oyenteCerrar('{{$reco->nombre}}')" >×</a>
                                   <img class="card-img-top" src= "{{$reco->puntos[0]->imagen}}">
                                   <div class="card-body">
                                     <h5 class="card-title">{{ $reco->nombre }}</h5>
