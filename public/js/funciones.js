@@ -5,34 +5,23 @@ var user_id;
 var lastOpenedInfoWindow;
 
 $(function() { 
-    
-         $.get("./api/recorridos", function (Recorridos) 
-          {
-          recorridos=Recorridos;      
-          });
-          //alert("2 el userid aca es "+user_id);
-           $.get("./api/estilos?user="+user_id,function (estilos) 
-             {
-          //alert("traje el estilo "+estilos[0].style);
-         if(estilos[0]!=undefined){
-            var estilo=estilos[0].style;
-            loadStyle(estilo);
-         }else        
-            loadStyle(localStorage.getItem("estilo"));
-         
-            });
-         // alert("3 el userid aca es "+user_id);
-
-       });
-     
+  $.get("./api/recorridos", function (Recorridos) {
+    recorridos=Recorridos;      
+  });
+  $.get("./api/estilos?user="+user_id,function (estilos) {
+    if(estilos[0]!=undefined){
+      var estilo=estilos[0].style;
+      loadStyle(estilo);
+    }else        
+      loadStyle(localStorage.getItem("estilo"));
+   });
+});     
 
 function oyenteCerrar(nombre){
-  if(window.confirm("Desea eliminar "+nombre+"?"))
-  {
+  if(window.confirm("Desea eliminar "+nombre+"?")){
     alert("ELIMINACION");
   }
-  
-  }
+}
 
 function initMap() {
   // Create a map object and specify the DOM element for display.
@@ -310,9 +299,6 @@ function changeStyle(){
   }  
 }
 
-
-
-
 var logout_event = function(response) {
   //alert("antes del logout "+user_id);
   user_id=undefined;
@@ -322,17 +308,13 @@ var logout_event = function(response) {
 
 var login_event = function(response) {
   FB.getLoginStatus(function(response) {
-        //alert("antes del login "+user_id);
          user_id=response.authResponse.userID;
-        // alert("despues del login "+user_id);
          window.location.reload(false);
        });
-
-  }
+}
 
  
 function statusChangeCallback(response){
-  alert("entre a status change callback");
      if (response.status === 'connected') {
        var uid = response.authResponse.userID;
        var accessToken = response.authResponse.accessToken;

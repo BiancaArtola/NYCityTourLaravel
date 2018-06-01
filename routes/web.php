@@ -18,5 +18,5 @@ Route::get('/', function () {
 	//$response = Route::dispatch($request);
 	$response=Recorridos::all();
 	$data = json_decode($response);
-	return view('welcome', [ 'title' => 'Laravel Sal\'s Pizza', 'recos' => $data]);
+	return view('welcome', [ 'title' => 'Ciudades turísticas', 'recos' => $data]);
 });

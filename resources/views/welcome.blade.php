@@ -2,7 +2,6 @@
 <html>
 
 <head>
-    <title></title>
     <link rel="shortcut icon" href="https://png.icons8.com/metro/1600/worldwide-location.png">
     <!-- Required meta tags-->
     <meta charset="utf-8">
@@ -22,17 +21,14 @@
     <div class="text-center">
     <nav class="navbar navbar-expand-lg navbar-light" id="navbar_1"><a class="navbar-brand" href="https://ciudadesturisticas.herokuapp.com/"><img src="https://png.icons8.com/metro/1600/worldwide-location.png" width="30" height="30" alt=""/></a><button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button><a class="navbar-brand" href="https://ciudadesturisticas.herokuapp.com/"><b><?php echo e($title) ?></b></a>
-        <div
-            class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto"></ul>
             <form class="form-inline my-2 my-lg-0">
-                <div class="col-md-8"><a class="nav_link" onclick="changeStyle()" style="cursor:pointer;"><b>Cambiar estilo</b></a></div>
-                <div class="col-md-4">
-                    <fb:login-button scope="public_profile,email" onlogin="checkLoginState();" autologoutlink="true"> </fb:login-button>
+                <div class="col-md-12"><a class="nav_link" onclick="changeStyle()" style="cursor:pointer;"><b>Cambiar estilo</b></a>
                 </div>
             </form>
-</div>
-</nav>
+        </div>
+    </nav>
 <hr/>
 <div class="container-fluid">
     <div class="row">
@@ -81,33 +77,41 @@
         </div>
         <div class="col-md-10" id="no_filtrado">
             <div class="row">
-                <div class="h7" id="textoFiltrado">Nuestros recorridos m&aacute;s visitados</div> 
+                <div class="h7" id="textoFiltrado"> 
+                    <p class="text-center">Nuestros recorridos m&aacute;s visitados </p>
+                </div> 
             </div>
                 
-
-                   
-                     <div class="row">
-                        @foreach ($recos as $reco)
-                        <div class="col-md-4">
-                                <div class="card"  >
-                                <a pull-right class="close" onclick="oyenteCerrar('{{$reco->nombre}}')" >×</a>
-                                  <img class="card-img-top" src= "{{$reco->puntos[0]->imagen}}">
-                                  <div class="card-body">
-                                    <h5 class="card-title">{{ $reco->nombre }}</h5>
-                                    <p class="card-text" align='justify'>{{$reco->descripcion_breve}}</p>
-                                    <a href="#" class="btn btn-secondary" onclick= "cargarEnMapa('{{$reco->nombre}}')" >Cargar en mapa</a>
-                                  </div>
-                                </div>
-
-                        </div> 
-
-                        @endforeach
+            <div class="row">
+            @foreach ($recos as $reco)
+                <div class="col-md-4">
+                    <div class="card"  >
+                        <a id="card-x" class="close" onclick="oyenteCerrar('{{$reco->nombre}}')" >×</a>
+                        <img class="card-img-top" src= "{{$reco->puntos[0]->imagen}}">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ $reco->nombre }}</h5>
+                            <p class="card-text" align='justify'>{{$reco->descripcion_breve}}</p>
+                            <a href="#" class="btn btn-secondary" onclick= "cargarEnMapa('{{$reco->nombre}}')" >Cargar en mapa</a>
+                        </div>
                     </div>
-                </div>
-                <div class="col-md-2"></div>
+                </div> 
+            @endforeach
+                <div class="col-md-4">
+                    <div class="card"  >
+                        <a id="card-x" class="close">-</a>
+                        <img class="card-img-top" src= "http://www.sistagua.com/sites/default/files/imagecache/proyectos/gris.jpg">
+                        <div class="card-body">
+                            <h5 class="card-title">Titulo</h5>
+                            <p class="card-text" align='center'>Descripcion del recorrido</p>
+                            <a href="#" class="btn btn-secondary" onclick= "" >Agregar un recorrido</a>
+                        </div>
+                    </div>
+                </div> 
             </div>
-            <hr/>
         </div>
+        
+        <hr/>
+    </div>
     </div>
     <hr/>
     <div class="row" id="mapa">
