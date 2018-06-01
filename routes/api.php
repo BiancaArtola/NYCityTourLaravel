@@ -22,3 +22,4 @@ Route::get('/recorridos', function () {
     return Recorridos::all();
 });
 
+Route::any('/nuevorecorrido', 'AjaxController@post');
