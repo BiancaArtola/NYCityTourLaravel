@@ -4,6 +4,7 @@ var recorridos;
 var user_id;
 var lastOpenedInfoWindow;
 
+
 $(function() { 
   $.get("./api/recorridos", function (Recorridos) {
     recorridos=Recorridos;      
@@ -16,6 +17,14 @@ $(function() {
       loadStyle(localStorage.getItem("estilo"));
    });
 });     
+
+function modificarRecorrido(nombreRecorrido){
+  alert("cambiar url y usar datos de nombre recorrido para cargar todo");
+}
+
+function cambiarUrl(){
+  alert("Aca habria q llevarlo a la url del nuevo recorrido");
+}
 
 function oyenteCerrar(nombre){
   if(window.confirm("Desea eliminar "+nombre+"?")){

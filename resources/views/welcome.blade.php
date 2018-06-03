@@ -92,6 +92,7 @@
                             <h5 class="card-title">{{ $reco->nombre }}</h5>
                             <p class="card-text" align='justify'>{{$reco->descripcion_breve}}</p>
                             <a href="#" class="btn btn-secondary" onclick= "cargarEnMapa('{{$reco->nombre}}')" >Cargar en mapa</a>
+                            <a href="#" class="btn btn-secondary" href="/modificarRecorrido/{{$reco->nombre}}" >Modificar recorrido</a>
                         </div>
                     </div>
                 </div> 
@@ -103,7 +104,7 @@
                         <div class="card-body">
                             <h5 class="card-title">Titulo</h5>
                             <p class="card-text" align='center'>Descripcion del recorrido</p>
-                            <a href="#" class="btn btn-secondary" onclick= "" >Agregar un recorrido</a>
+                            <a href="#" class="btn btn-secondary" onclick= "cambiarUrl()" >Agregar un recorrido</a>
                         </div>
                     </div>
                 </div> 

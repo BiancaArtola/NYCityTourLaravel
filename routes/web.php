@@ -11,7 +11,6 @@
 |
 */
 
-//Route::get('/','main@index');
-
 Route::get('/', 'main@index');
 Route::get('/nuevoRecorrido','controladorAgregar@agregar');
+Route::get('/modificarRecorrido','controladorModificar@modificar');

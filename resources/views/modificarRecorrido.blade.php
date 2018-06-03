@@ -35,13 +35,16 @@
             <div class="form-group col-md-6">
               <div id="nombre_recorrido"><strong>Nombre de recorrido </strong></div>
               <div class="form-group col-md-6">
-                <input type="text" class="form-control" id="nombre" placeholder="Nombre del recorrido" name="nombre" required>
+                <input type="text" class="form-control" id="nombre" placeholder="Nombre del recorrido" name="nombre" required 
+                value="{{ $recorrido[0]->nombre }}">
+
               </div>
               <div class="form-group col-md-6"></div>
 
               <div id="tiempo_recorrido"><strong>Tiempo estimado del recorrido</strong></div>
                <div class="form-group col-md-6">
-                <input type="text" class="form-control" id="nombre" placeholder="Tiempo del recorrido en horas" name="tiempo" required>
+                <input type="text" class="form-control" id="nombre" placeholder="Tiempo del recorrido en horas" name="tiempo" required
+                value="{{ $recorrido[0]->tiempo }}">
               </div>
               <div class="form-group col-md-6"></div>
 
@@ -59,13 +62,16 @@
 
               <div id="url_recorrido"><strong>Url del recorrido</strong></div>
                <div class="form-group col-md-6">
-                <input type="text" class="form-control" id="url" placeholder="Url del recorrido" name="url" required>
+                <input type="text" class="form-control" id="url" placeholder="Url del recorrido" name="nombre_url" required 
+                value=" {{ $recorrido[0]->nombre_url }} ">
               </div>
               <div class="form-group col-md-6"></div>
 
               <div id="url_recorrido"><strong>Agregar puntos del recorrido</strong></div>
                <div class="form-group col-md-6" id="text-punto">
-                <input type="text" class="form-control" id="puntos" placeholder="Ingrese el placeId del lugar que desee" name="punto" required>
+                @foreach ($recorrido[0]->puntos as $punto)
+                <input type="text" class="form-control" id="puntos" placeholder="Ingrese el placeId del lugar que desee" name="punto" required value=" {{ $punto->place_id }}">
+                @endforeach
               </div>
               <div class="form-group col-md-6"></div>
               <button type="button" onclick="anadirText()" class="btn btn-default"> 
@@ -88,13 +94,13 @@
 
               <div id="descripcion_recorrido"><strong>Descripción del recorrido</strong></div>
                <div class="form-group col-md-6">
-                <input type="text" class="form-control" id="descripcion" placeholder="Descripcion del recorrido" name="descripcion" required>
+                <input type="text" class="form-control" id="descripcion" placeholder="Descripcion del recorrido" name="descripcion" required value="{{ $recorrido[0]->descripcion }}">
               </div>
               <div class="form-group col-md-6"></div>
 
               <div id="descripcion_breve_recorrido"><strong>Descripcion breve del recorrido</strong></div>
               <div class="form-group col-md-6">
-                <input type="text" class="form-control" id="descripcion_breve" placeholder="Descripcion breve del recorrido" name="descripcion_breve" required>
+                <input type="text" class="form-control" id="descripcion_breve" placeholder="Descripcion breve del recorrido" name="descripcion_breve" required value="{{ $recorrido[0]->descripcion_breve }}">
               </div>
               <div class="form-group col-md-6"></div>
 
@@ -116,7 +122,8 @@
             <div class="form-group col-md-10"></div>
             <div class="form-group col-md-2">
 
-              <button class="agregar" type="submit">Agregar recorrido</button>
+              <button class="agregar btn btn-default" type="button" >Modificar recorrido</button>
+              <!--type="submit"-->
             </div>
           </div>
     </div>

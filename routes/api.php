@@ -22,4 +22,7 @@ Route::get('/recorridos', function () {
     return Recorridos::all();
 });
 
-Route::any('/nuevorecorrido', 'AjaxController@post');
+Route::get('/unRecorrido', function () {
+    return Recorridos::all();
+    //aca hay q mandarle el recorrido correspondiente pero nose como mierda hcaerlo.
+});
