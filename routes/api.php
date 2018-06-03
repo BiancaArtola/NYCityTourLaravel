@@ -22,7 +22,6 @@ Route::get('/recorridos', function () {
     return Recorridos::all();
 });
 
-Route::get('/unRecorrido', function () {
-    return Recorridos::all();
-    //aca hay q mandarle el recorrido correspondiente pero nose como mierda hcaerlo.
+Route::get('/unRecorrido/{nombre_url}', function (Request $request) {
+    return Recorridos::where('nombre_url', $request -> nombre_url)->get();
 });
