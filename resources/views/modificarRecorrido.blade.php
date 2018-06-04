@@ -5,7 +5,7 @@
     <!-- Required meta tags-->
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <link id="esti" rel="stylesheet" href="/stylesheets/estilo1.css" />
+    <link id="esti" rel="stylesheet" href="/css/estilo1.css" />
     <!-- Bootstrap CSS-->
     <script type="text/javascript" src="/javascripts/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="/js/funcionesRecos.js"></script>
@@ -29,8 +29,9 @@
         {{ csrf_field() }}
 
           <div class="form-row">
-            <div><h7>Ingresar atributos del recorrido</h7></div>
+            <div  class="text-center"><h3>Modificar atributos del recorrido</h3></div>
           </div>
+          <hr>
           <div class="form-row">
             <div class="form-group col-md-6">
               <div id="nombre_recorrido"><strong>Nombre de recorrido </strong></div>
@@ -74,7 +75,7 @@
                 @endforeach
               </div>
               <div class="form-group col-md-6"></div>
-              <button type="button" onclick="anadirText()" class="btn btn-default"> 
+              <button id="boton-puntos"  type="button" onclick="anadirText()" class="btn btn-default"> 
                 Agregar otro punto
               </button>
 

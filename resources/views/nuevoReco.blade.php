@@ -5,7 +5,7 @@
     <!-- Required meta tags-->
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <link id="esti" rel="stylesheet" href="/stylesheets/estilo1.css" />
+    <link id="esti" rel="stylesheet" href="/css/estilo1.css" />
     <!-- Bootstrap CSS-->
     <script type="text/javascript" src="/javascripts/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="/js/funcionesRecos.js"></script>
@@ -29,7 +29,8 @@
         {{ csrf_field() }}
 
           <div class="form-row">
-            <div><h7>Ingresar atributos del recorrido</h7></div>
+            <div><h6>Ingresar atributos del recorrido</h6></div>
+            <hr>
           </div>
           <div class="form-row">
             <div class="form-group col-md-6">
@@ -116,7 +117,7 @@
             <div class="form-group col-md-10"></div>
             <div class="form-group col-md-2">
 
-              <button class="agregar" type="submit">Agregar recorrido</button>
+              <button class="btn btn-default" href="/" type="submit">Agregar recorrido</button>
             </div>
           </div>
     </div>

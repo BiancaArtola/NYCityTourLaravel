@@ -23,10 +23,7 @@
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button><a class="navbar-brand" href="https://ciudadesturisticas.herokuapp.com/"><b><?php echo e($title) ?></b></a>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto"></ul>
-            <form class="form-inline my-2 my-lg-0">
-                <div class="col-md-12"><a class="nav_link" onclick="changeStyle()" style="cursor:pointer;"><b>Cambiar estilo</b></a>
-                </div>
-            </form>
+
         </div>
     </nav>
 <hr/>
@@ -77,9 +74,11 @@
         </div>
         <div class="col-md-10" id="no_filtrado">
             <div class="row">
-                <div class="h7" id="textoFiltrado"> 
-                    <p class="text-center">Nuestros recorridos m&aacute;s visitados </p>
+                <div class="col-md-3"></div>
+                <div class="col-md-6" id="textoFiltrado"> 
+                    <h7><p class="text-center">Nuestros recorridos m&aacute;s visitados </p></h7>
                 </div> 
+                 <div class="col-md-3"></div>
             </div>
                 
             <div class="row">
@@ -104,7 +103,7 @@
                         <div class="card-body">
                             <h5 class="card-title">Titulo</h5>
                             <p class="card-text" align='center'>Descripcion del recorrido</p>
-                            <a href="#" class="btn btn-secondary" onclick= "cambiarUrl()" >Agregar un recorrido</a>
+                            <a href="nuevoRecorrido" class="btn btn-secondary"  >Agregar un recorrido</a>
                         </div>
                     </div>
                 </div> 
