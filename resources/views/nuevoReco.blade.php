@@ -29,7 +29,7 @@
         {{ csrf_field() }}
 
           <div class="form-row">
-            <div><h6>Ingresar atributos del recorrido</h6></div>
+            <div><h3>Ingresar atributos del recorrido</h3></div>
             <hr>
           </div>
           <div class="form-row">
