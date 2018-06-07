@@ -18,13 +18,6 @@ $(function() {
    });
 });     
 
-function modificarRecorrido(nombreRecorrido){
-  alert("cambiar url y usar datos de nombre recorrido para cargar todo");
-}
-
-function cambiarUrl(){
-  alert("Aca habria q llevarlo a la url del nuevo recorrido");
-}
 
 function oyenteCerrar(nombre){
   if(window.confirm("Desea eliminar "+nombre+"?")){
@@ -188,7 +181,6 @@ function mostrarRecorridos(cumplen){
 
 
 function cargarEnMapa(nombre){  
-  alert(nombre);
   var reco = obtenerRecorrido(nombre);
   clearOverlays(); 
 
@@ -269,76 +261,6 @@ function loadStyle(numeroEstilo){
   var style="/stylesheets/estilo"+numeroEstilo+".css";
   document.getElementById('esti').setAttribute('href',style);
 }
-
-function changeStyle(){
-  alert("el userid aca es "+user_id);
-  var txt=document.getElementById("esti").getAttribute('href');
-  if(txt=="/stylesheets/estilo1.css") {
-    var data={ "user": user_id,"newstyle": 2 };
-    document.getElementById('esti').setAttribute('href', '/stylesheets/estilo2.css');
-    if(user_id!=undefined) {
-      $.ajax({
-      url: './api/estilos',
-      type: 'POST',
-      data: data,
-      contentType: "application/x-www-form-urlencoded; charset=UTF-8",
-      dataType: "json",
-      success: function(data){},
-      error: function(data) {}
-     });
-    }else
-      localStorage.setItem("estilo",2); 
-  }else{
-    var data={ "user": user_id,"newstyle": 1 };
-    document.getElementById('esti').setAttribute('href', '/stylesheets/estilo1.css');
-    if(user_id!=undefined){
-      $.ajax({
-      url: './api/estilos',
-      type: 'POST',
-      data: data,
-      contentType: "application/x-www-form-urlencoded; charset=UTF-8",
-      dataType: "json",
-      success: function(data){},
-      error: function(data) {}
-     });
-    
-    }
-    else
-      localStorage.setItem("estilo",1);    
-  }  
-}
-
-var logout_event = function(response) {
-  //alert("antes del logout "+user_id);
-  user_id=undefined;
-  //alert("despues del logout "+user_id);
-  window.location.reload(false);
-  }
-
-var login_event = function(response) {
-  FB.getLoginStatus(function(response) {
-         user_id=response.authResponse.userID;
-         window.location.reload(false);
-       });
-}
-
- 
-function statusChangeCallback(response){
-     if (response.status === 'connected') {
-       var uid = response.authResponse.userID;
-       var accessToken = response.authResponse.accessToken;
-     } 
-}
-
-(function(d, s, id){
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) {
-    return;
-  }
-  js = d.createElement(s); js.id = id;
-  js.src = "https://connect.facebook.net/en_US/sdk.js";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));
 
 
 
