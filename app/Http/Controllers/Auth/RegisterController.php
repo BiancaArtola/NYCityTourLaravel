@@ -7,6 +7,10 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use Illuminate\Support\Facades\Auth;
+use App\Notifications\UserRegisteredSuccessfully;
+use Illuminate\Http\Request;
+
 
 class RegisterController extends Controller
 {
@@ -68,5 +72,30 @@ class RegisterController extends Controller
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
         ]);
+
     }
+
+    /**
+     * Activate the user with given activation code.
+     * @param string $activationCode
+     * @return string
+     */
+    public function activateUser(string $activationCode)
+    {
+        try {
+            $user = app(User::class)->where('activation_code', $activationCode)->first();
+            if (!$user) {
+                return "The code does not exist for any user in our system.";
+            }
+            $user->status          = 1;
+            $user->activation_code = null;
+            $user->save();
+            auth()->login($user);
+        } catch (\Exception $exception) {
+            logger()->error($exception);
+            return "Whoops! something went wrong.";
+        }
+        return redirect()->to('/home');
+    }
+
 }

@@ -11,6 +11,11 @@
 |
 */
 
-Route::get('/', 'main@index');
-Route::get('/nuevoRecorrido','controladorAgregar@agregar');
-Route::get('/modificarRecorrido/{nombre_url}','controladorModificar@modificar');
+Route::get('/', 'main@index') -> middleware('auth');;
+Route::get('/nuevoRecorrido','controladorAgregar@agregar') -> middleware('auth');
+Route::get('/modificarRecorrido/{nombre_url}','controladorModificar@modificar') -> middleware('auth');
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+$this->get('/verify-user/{code}', 'Auth\RegisterController@activateUser')->name('activate.user');
