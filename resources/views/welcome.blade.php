@@ -86,7 +86,7 @@
                 <div class="col-md-4">
                     <div class="card"  >
                         <a id="card-x" class="close" onclick="oyenteCerrar('{{$reco->nombre}}')" >×</a>
-                        <img class="card-img-top" src= "{{$reco->puntos[0]->imagen}}">
+                        <img class="card-img-top" src= "{{$reco->imagen}}">
                         <div class="card-body">
                             <h5 class="card-title">{{ $reco->nombre }}</h5>
                             <p class="card-text" align='justify'>{{$reco->descripcion_breve}}</p>

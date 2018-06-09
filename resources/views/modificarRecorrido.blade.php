@@ -25,7 +25,7 @@
 
 
     <div class="container-fluid">
-     <form method="POST" action="agregar">
+     <form method="POST" action="modificar">
         {{ csrf_field() }}
 
           <div class="form-row">
@@ -142,14 +142,38 @@
 
               <div id="transporte_recorrido"><strong>Transporte del recorrido</strong></div>
               <div class="form-group col-md-6">
-               <select class="form-control" id="categoria">
-                    <option>Auto</option>
-                    <option>Colectivo</option>
-                    <option>Caminando</option>
-                    <option>Bicicleta</option>
+               <select class="form-control" id="apto">
+                 @if ($recorrido[0]->apto == "auto")
+                    <option selected value="auto">Auto</option>
+                    <option value="colectivo">Colectivo</option>
+                    <option value="caminando">Caminando</option>
+                    <option value="cicicleta">Bicicleta</option>
+                 @elseif ($recorrido[0]->apto == "colectivo")
+                    <option selected value="auto">Auto</option>
+                    <option selected value="colectivo">Colectivo</option>
+                    <option value="caminando">Caminando</option>
+                    <option value="cicicleta">Bicicleta</option>
+                 @elseif ($recorrido[0]->apto == "caminando")
+                    <option selected value="auto">Auto</option>
+                    <option value="colectivo">Colectivo</option>
+                    <option selected value="caminando">Caminando</option>
+                    <option value="cicicleta">Bicicleta</option>
+                 @elseif ($recorrido[0]->apto == "bicicleta")
+                    <option  value="auto">Auto</option>
+                    <option value="colectivo">Colectivo</option>
+                    <option value="caminando">Caminando</option>
+                    <option selected value="cicicleta">Bicicleta</option>
+                 @endif
                </select>
                </div>
                <div class="form-group col-md-6"></div>
+
+               <div id="descripcion_breve_recorrido"><strong>Imagen del recorrido</strong></div>
+              <div class="form-group col-md-6">
+                <input type="text" class="form-control" id="imagen" placeholder="Imagen del recorrido" name="imagen" required value="{{ $recorrido[0]->imagen }}">
+              </div>
+              <div class="form-group col-md-6"></div>
+
             </div>
           </div>
 
@@ -157,7 +181,7 @@
             <div class="form-group col-md-10"></div>
             <div class="form-group col-md-2">
 
-              <button class="agregar btn btn-default" type="submit" >Modificar recorrido</button>
+              <button class="botonModificar" type="submit" >Modificar recorrido</button>
               <!--type="submit"-->
             </div>
           </div>

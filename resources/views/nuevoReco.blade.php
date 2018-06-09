@@ -48,11 +48,11 @@
 
               <div id="categoria_recorrido"><strong>Categoría del recorrido</strong></div>
                <div class="form-group col-md-6">
-               <select class="form-control" id="categoria">
-                <option>Turistico</option>
-                <option>Ninos</option>
-                <option>Cultural</option>
-                <option>Historico</option>
+               <select class="form-control" id="categoria" name="categoria">
+                <option value="turistico">Turistico</option>
+                <option value="ninos">Niños</option>
+                <option value="cultural">Cultural</option>
+                <option value="historico">Historico</option>
                </select>
                </div>
                <div class="form-group col-md-6"></div>
@@ -66,7 +66,7 @@
 
               <div id="url_recorrido"><strong>Agregar puntos del recorrido</strong></div>
                <div class="form-group col-md-6" id="text-punto">
-                <input type="text" class="form-control" id="puntos" placeholder="Ingrese el placeId del lugar que desee" name="punto" required>
+                <input type="text" class="form-control" id="puntos" placeholder="Ingrese el placeId del lugar que desee" name="puntos" required>
               </div>
               <div class="form-group col-md-6"></div>
               <button type="button" onclick="anadirText()" class="btn btn-default"> 
@@ -77,11 +77,11 @@
            <div class="form-group col-md-6">
               <div id="tarifa_recorrido"><strong>Tarifa del recorrido</strong></div>
               <div class="form-group col-md-6">
-               <select class="form-control" id="tarifa">
-                <option>5</option>
-                <option>10</option>
-                <option>20</option>
-                <option>50</option>
+               <select class="form-control" id="tarifa" name="tarifa">
+                  <option value=5>Entre 0 y 5 U$</option>
+                  <option value=10>Entre 6 y 10 U$</option>
+                  <option value=20>Entre 10 y 20 U$</option>
+                  <option value=50>Mayor a 20 U$</option>
                </select>
                </div>
                <div class="form-group col-md-6"></div>
@@ -102,14 +102,22 @@
 
               <div id="transporte_recorrido"><strong>Transporte del recorrido</strong></div>
               <div class="form-group col-md-6">
-               <select class="form-control" id="categoria">
-                <option>Auto</option>
-                <option>Colectivo</option>
-                <option>Caminando</option>
-                <option>Bicicleta</option>
+               <select class="form-control" id="apto" name="apto">
+                <option value="auto">Auto</option>
+                <option value="colectivo">Colectivo</option>
+                <option value="caminando">Caminando</option>
+                <option value="bicicleta">Bicicleta</option>
                </select>
                </div>
                <div class="form-group col-md-6"></div>
+
+
+              <div id="transporte_recorrido"><strong>Imagen del recorrido</strong></div>
+              <div class="form-group col-md-6">
+                <input type="text" class="form-control" id="imagen" placeholder="Imagen del recorrido" name="imagen" required>
+              </div>
+               <div class="form-group col-md-6"></div>
+
             </div>
           </div>
 
@@ -117,7 +125,7 @@
             <div class="form-group col-md-10"></div>
             <div class="form-group col-md-2">
 
-              <button class="btn btn-default" href="/" type="submit">Agregar recorrido</button>
+              <button class="btn btn-default" type="submit">Agregar recorrido</button>
             </div>
           </div>
     </div>
