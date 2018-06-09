@@ -25,7 +25,7 @@
 
 
     <div class="container-fluid">
-     <form method="POST" action="modificar">
+     <form method="POST" action="/modificar">
         {{ csrf_field() }}
 
           <div class="form-row">
