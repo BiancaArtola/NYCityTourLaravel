@@ -20,11 +20,17 @@ Route::get('/nuevoRecorrido','controladorAgregar@agregarView') -> middleware('au
 //Get pagina modificar
 Route::get('/modificarRecorrido/{nombre_url}','controladorModificar@modificarView') -> middleware('auth');
 
+//Get eliminar
+Route::get('/eliminar/{_id}','controladorEliminar@eliminar') -> middleware('auth');
+
 //Post pagina agregar recorrido
 Route::post('agregar', 'controladorAgregar@agregar') -> middleware('auth');
 
 //Post pagina modificar recorrido
 Route::post('modificar','controladorModificar@modificar') -> middleware('auth');
+
+//Get pagina modificar
+Route::post('eliminar','controladorEliminar@eliminar') -> middleware('auth');
 
 //Autenticacion
 Auth::routes();
