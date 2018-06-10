@@ -32,7 +32,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = '/';
 
     /**
      * Create a new controller instance.
@@ -95,7 +95,7 @@ class RegisterController extends Controller
             logger()->error($exception);
             return "Whoops! something went wrong.";
         }
-        return redirect()->to('/home');
+        return redirect()->to('/');
     }
 
 }
