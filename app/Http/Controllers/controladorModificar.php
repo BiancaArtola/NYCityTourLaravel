@@ -30,7 +30,7 @@ class controladorModificar extends Controller
 		$recorrido->descripcion_breve=$request->descripcion_breve;
 		$recorrido->apto=$request->apto;
 		$recorrido->imagen=$request->imagen;
-		// $recorrido->puntos[0]->place_id=$request->puntos;
+		$recorrido->puntos=$recorrido->puntos+$request->puntosPI;
 
 		$recorrido->save();
 		return redirect('/');

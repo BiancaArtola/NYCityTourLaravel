@@ -88,7 +88,7 @@
               <div id="url_recorrido"><strong>Agregar puntos del recorrido</strong></div>
                <div class="form-group col-md-6" id="text-punto">
                 @foreach ($recorrido[0]->puntos as $punto)
-                <input type="text" class="form-control" id="puntos" placeholder="Ingrese el placeId del lugar que desee" name="punto" required value=" {{ $punto->place_id }}">
+                <input type="text" class="form-control" id="puntos" placeholder="Ingrese el placeId del lugar que desee" name="puntosPI[]" required value=" {{ $punto}}">
                 @endforeach
               </div>
               <div class="form-group col-md-6"></div>
@@ -181,7 +181,7 @@
             <div class="form-group col-md-10"></div>
             <div class="form-group col-md-2">
 
-              <button class="botonModificar" type="submit" >Modificar recorrido</button>
+              <button  class="btn btn-default" type="submit" >Modificar recorrido</button>
               <!--type="submit"-->
             </div>
           </div>
