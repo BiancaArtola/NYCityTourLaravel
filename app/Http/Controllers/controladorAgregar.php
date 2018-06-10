@@ -28,5 +28,6 @@ class controladorAgregar extends Controller{
 
 		  $recorrido->save();
 		  return redirect('/');
+		  
 	 }
 }
