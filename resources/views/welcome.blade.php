@@ -85,7 +85,7 @@
             @foreach ($recos as $reco)
                 <div class="col-md-4">
                     <div class="card"  >
-                        <a id="card-x" class="close" href="/eliminar/{{$reco->_id}}" >×</a>
+                        <a id="card-x" class="close" href="/eliminar/{{$reco->nombre_url}}" >×</a>
                         <img class="card-img-top" src= "{{$reco->imagen}}">
                         <div class="card-body">
                             <h5 class="card-title">{{ $reco->nombre }}</h5>

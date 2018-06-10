@@ -23,8 +23,8 @@ class controladorAgregar extends Controller{
 		  $recorrido->descripcion_breve=$request->descripcion_breve;
 		  $recorrido->apto=$request->apto;
 		  $recorrido->imagen=$request->imagen;
-		  $recorrido->puntos= new stdClass;
-		  $recorrido->puntos[0]->place_id = $request->puntos;
+		  //var_dump($request->puntos);
+		  //$recorrido->puntos[0]->place_id = $request->puntos;
 
 		  $recorrido->save();
 		  return redirect('/');

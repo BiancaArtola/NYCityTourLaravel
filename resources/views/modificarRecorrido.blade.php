@@ -44,14 +44,14 @@
 
               <div id="tiempo_recorrido"><strong>Tiempo estimado del recorrido</strong></div>
                <div class="form-group col-md-6">
-                <input type="text" class="form-control" id="nombre" placeholder="Tiempo del recorrido en horas" name="tiempo" required
+                <input type="text" class="form-control" id="tiempo" placeholder="Tiempo del recorrido en horas" name="tiempo" required
                 value="{{ $recorrido[0]->tiempo }}">
               </div>
               <div class="form-group col-md-6"></div>
 
               <div id="categoria_recorrido"><strong>Categoría del recorrido</strong></div>
                <div class="form-group col-md-6">
-               <select class="form-control" id="categoria">
+               <select class="form-control" id="categoria" name="categoria">
                   @if ($recorrido[0]->categoria == "turistico")
                     <option selected value="turistico">Turistico</option>
                     <option value="ninos">Niños</option>
@@ -80,7 +80,7 @@
 
               <div id="url_recorrido"><strong>Url del recorrido</strong></div>
                <div class="form-group col-md-6">
-                <input type="text" class="form-control" id="url" placeholder="Url del recorrido" name="nombre_url" required 
+                <input type="text" class="form-control" id="nombre_url" placeholder="Url del recorrido" name="nombre_url" required 
                 value=" {{ $recorrido[0]->nombre_url }} ">
               </div>
               <div class="form-group col-md-6"></div>
@@ -100,7 +100,7 @@
            <div class="form-group col-md-6">
               <div id="tarifa_recorrido"><strong>Tarifa del recorrido</strong></div>
               <div class="form-group col-md-6">
-               <select class="form-control" id="tarifa">
+               <select class="form-control" id="tarifa" name="tarifa">
                   @if ($recorrido[0]->tarifa == "5")
                     <option selected value=5>Entre 0 y 5 U$</option>
                     <option value=10>Entre 6 y 10 U$</option>
@@ -142,7 +142,7 @@
 
               <div id="transporte_recorrido"><strong>Transporte del recorrido</strong></div>
               <div class="form-group col-md-6">
-               <select class="form-control" id="apto">
+               <select class="form-control" id="apto" name="apto">
                  @if ($recorrido[0]->apto == "auto")
                     <option selected value="auto">Auto</option>
                     <option value="colectivo">Colectivo</option>

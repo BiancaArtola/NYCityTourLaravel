@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Recorridos;
 
 class controladorModificar extends Controller
 {
@@ -23,7 +24,7 @@ class controladorModificar extends Controller
 		$recorrido->nombre=$request->nombre;
 		$recorrido->tiempo=$request->tiempo;
 		$recorrido->categoria=$request->categoria;
-		$recorrido->nombre_url=$request->url;
+		$recorrido->nombre_url=$request->nombre_url;
 		$recorrido->tarifa=$request->tarifa;
 		$recorrido->descripcion=$request->descripcion;
 		$recorrido->descripcion_breve=$request->descripcion_breve;

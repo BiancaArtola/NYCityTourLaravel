@@ -12,26 +12,26 @@
 */
 
 //Get pagina principal
-Route::get('/', 'controladorRecorridos@index') -> middleware('auth');
-
+//Route::get('/', 'controladorRecorridos@index') -> middleware('auth');
+Route::get('/', 'controladorRecorridos@index');
 //Get pagina agregar recorrido
-Route::get('/nuevoRecorrido','controladorAgregar@agregarView') -> middleware('auth');
-
+//Route::get('/nuevoRecorrido','controladorAgregar@agregarView') -> middleware('auth');
+Route::get('/nuevoRecorrido','controladorAgregar@agregarView');
 //Get pagina modificar
-Route::get('/modificarRecorrido/{nombre_url}','controladorModificar@modificarView') -> middleware('auth');
-
+//Route::get('/modificarRecorrido/{nombre_url}','controladorModificar@modificarView') -> middleware('auth');
+Route::get('/modificarRecorrido/{nombre_url}','controladorModificar@modificarView');
 //Get eliminar
-Route::get('/eliminar/{_id}','controladorEliminar@eliminar') -> middleware('auth');
-
+//Route::get('/eliminar/{_id}','controladorEliminar@eliminar') -> middleware('auth');
+Route::get('/eliminar/{_id}','controladorEliminar@eliminar');
 //Post pagina agregar recorrido
-Route::post('agregar', 'controladorAgregar@agregar') -> middleware('auth');
-
+//Route::post('agregar', 'controladorAgregar@agregar') -> middleware('auth');
+Route::post('agregar', 'controladorAgregar@agregar');
 //Post pagina modificar recorrido
-Route::post('modificar','controladorModificar@modificar') -> middleware('auth');
-
+//Route::post('modificar','controladorModificar@modificar') -> middleware('auth');
+Route::post('modificar','controladorModificar@modificar');
 //Get pagina modificar
-Route::post('eliminar','controladorEliminar@eliminar') -> middleware('auth');
-
+//Route::post('eliminar','controladorEliminar@eliminar') -> middleware('auth');
+Route::post('eliminar','controladorEliminar@eliminar');
 //Autenticacion
 Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
