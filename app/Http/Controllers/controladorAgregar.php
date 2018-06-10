@@ -23,11 +23,24 @@ class controladorAgregar extends Controller{
 		  $recorrido->descripcion_breve=$request->descripcion_breve;
 		  $recorrido->apto=$request->apto;
 		  $recorrido->imagen=$request->imagen;
-		  //var_dump($request->puntos);
-		  //$recorrido->puntos[0]->place_id = $request->puntos;
+		  
+		  for ( $i=0; $i<count($request->puntosPI); $i++) {
+		  	 
+		  	$recorrido->puntos[$i] = $request->puntosPI[$i];
+		  }
 
-		  $recorrido->save();
-		  return redirect('/');
+/*
+		  $puntosPlace = request($puntosPI);
+		  $puntos = array();
+	      for($i=0 ; $i<count($puntosPlace) ; $i++) {
+		     $puntos->place_id = $puntosPlace[$i];
+		      $jugadores[$i] = $jugador;
+		    }
+	    $recorrido->puntos = $puntos;
+		  //$recorrido->puntos[0]->place_id = $request->puntos;
+*/
+		  //$recorrido->save();
+	//	  return redirect('/');
 		  
 	 }
 }

@@ -66,7 +66,7 @@
 
               <div id="puntos_recorrido"><strong>Agregar puntos del recorrido</strong></div>
                <div class="form-group col-md-6" id="text-punto">
-                <input type="text" class="form-control" id="puntos" placeholder="Ingrese el placeId del lugar que desee" name="puntos" required>
+                <input type="text" class="form-control" id="puntos" name="puntosPI[]" placeholder="Ingrese el placeId del lugar que desee" name="puntos" required>
               </div>
               <div class="form-group col-md-6"></div>
               <button type="button" onclick="anadirText()" class="btn btn-default"> 
