@@ -32,7 +32,16 @@ Route::post('modificar','controladorModificar@modificar') -> middleware('auth');
 //Get pagina modificar
 Route::post('eliminar','controladorEliminar@eliminar') -> middleware('auth');
 
+/*
 //Autenticacion
 Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 $this->get('/verify-user/{code}', 'Auth\RegisterController@activateUser')->name('activate.user');
+*/
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
