@@ -66,6 +66,7 @@
             <div  class="text-center"><h3>Modificar atributos del recorrido</h3></div>
           </div>
           <hr>
+          @include('error')
           <div class="form-row">
             <div class="form-group col-md-6">
               <div id="nombre_recorrido"><strong>Nombre de recorrido </strong></div>

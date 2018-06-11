@@ -65,18 +65,20 @@
           <div class="form-row">
             <div><h3>Ingresar atributos del recorrido</h3></div>
             <hr>
+
           </div>
+             @include ('error')
           <div class="form-row">
             <div class="form-group col-md-6">
               <div id="nombre_recorrido"><strong>Nombre de recorrido </strong></div>
               <div class="form-group col-md-6">
-                <input type="text" class="form-control" id="nombre" placeholder="Nombre del recorrido" name="nombre" required>
+                <input type="text" class="form-control" id="nombre" placeholder="Nombre del recorrido" name="nombre" value="{{ old('nombre') }}" required>
               </div>
               <div class="form-group col-md-6"></div>
 
               <div id="tiempo_recorrido"><strong>Tiempo estimado del recorrido</strong></div>
                <div class="form-group col-md-6">
-                <input type="text" class="form-control" id="nombre" placeholder="Tiempo del recorrido en horas" name="tiempo" required>
+                <input type="text" class="form-control" id="tiempo" placeholder="Tiempo del recorrido en horas" name="tiempo" value="{{ old('tiempo') }}" required>
               </div>
               <div class="form-group col-md-6"></div>
 
@@ -94,13 +96,13 @@
 
               <div id="url_recorrido"><strong>Url del recorrido</strong></div>
                <div class="form-group col-md-6">
-                <input type="text" class="form-control" id="url" placeholder="Url del recorrido" name="url" required>
+                <input type="text" class="form-control" id="url" placeholder="Url del recorrido" name="url" value="{{ old('url') }}" required>
               </div>
               <div class="form-group col-md-6"></div>
 
               <div id="puntos_recorrido"><strong>Agregar puntos del recorrido</strong></div>
                <div class="form-group col-md-6" id="text-punto">
-                <input type="text" class="form-control" id="puntos" name="puntosPI[]" placeholder="Ingrese el placeId del lugar que desee" name="puntos" required>
+                <input type="text" class="form-control" id="puntos" name="puntosPI[]" value="{{ old('puntosPI[]') }}" placeholder="Ingrese el placeId del lugar que desee" name="puntos" required>
               </div>
               <div class="form-group col-md-6"></div>
               <button type="button" onclick="anadirText()" class="btn btn-default"> 
@@ -123,13 +125,13 @@
 
               <div id="descripcion_recorrido"><strong>Descripción del recorrido</strong></div>
                <div class="form-group col-md-6">
-                <input type="text" class="form-control" id="descripcion" placeholder="Descripcion del recorrido" name="descripcion" required>
+                <input type="text" class="form-control" id="descripcion" placeholder="Descripcion del recorrido" name="descripcion" value="{{ old('descripcion') }}" required>
               </div>
               <div class="form-group col-md-6"></div>
 
               <div id="descripcion_breve_recorrido"><strong>Descripcion breve del recorrido</strong></div>
               <div class="form-group col-md-6">
-                <input type="text" class="form-control" id="descripcion_breve" placeholder="Descripcion breve del recorrido" name="descripcion_breve" required>
+                <input type="text" class="form-control" id="descripcion_breve" placeholder="Descripcion breve del recorrido" name="descripcion_breve" value="{{ old('descripcion_breve') }}" required>
               </div>
               <div class="form-group col-md-6"></div>
 
@@ -148,7 +150,7 @@
 
               <div id="transporte_recorrido"><strong>Imagen del recorrido</strong></div>
               <div class="form-group col-md-6">
-                <input type="text" class="form-control" id="imagen" placeholder="Imagen del recorrido" name="imagen" required>
+                <input type="text" class="form-control" id="imagen" placeholder="Imagen del recorrido" name="imagen" value="{{ old('imagen') }}" required>
               </div>
                <div class="form-group col-md-6"></div>
 
@@ -163,5 +165,8 @@
             </div>
           </div>
     </div>
+
+
+   </form>
 </body>
 </html>
