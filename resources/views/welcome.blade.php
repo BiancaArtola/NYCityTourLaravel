@@ -19,12 +19,51 @@
 
 <body>
     <div class="text-center">
-    <nav class="navbar navbar-expand-lg navbar-light" id="navbar_1"><a class="navbar-brand" href="http://ciudadesturisticas-admin.herokuapp.com/"><img src="https://png.icons8.com/metro/1600/worldwide-location.png" width="30" height="30" alt=""/></a><button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button><a class="navbar-brand" href="https://ciudadesturisticas.herokuapp.com/"><b><?php echo e($title) ?></b></a>
+    <nav class="navbar navbar-expand-lg navbar-light" id="navbar_1">
+        <a class="navbar-brand" href="http://ciudadesturisticas-admin.herokuapp.com/">
+            <img src="https://png.icons8.com/metro/1600/worldwide-location.png" width="30" height="30" alt=""/>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <a class="navbar-brand" href="http://ciudadesturisticas-admin.herokuapp.com/"><b><?php echo e($title) ?></b></a>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto"></ul>
-
         </div>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <!-- Left Side Of Navbar -->
+                    <ul class="navbar-nav mr-auto">
+
+                    </ul>
+
+                    <!-- Right Side Of Navbar -->
+                    <ul class="navbar-nav ml-auto">
+                        <!-- Authentication Links -->
+                        @guest
+                            <li><a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a></li>
+                          <!--  <li><a class="nav-link" disabled href="{{ route('register') }}">{{ __('Register') }}</a></li>-->
+                        @else
+                            <li class="nav-item dropdown">
+                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                    {{ Auth::user()->name }} <span class="caret"></span>
+                                </a>
+
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="{{ route('logout') }}"
+                                       onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                        {{ __('Logout') }}
+                                    </a>
+
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                        @csrf
+                                    </form>
+                                </div>
+                            </li>
+                        @endguest
+                    </ul>
+                </div>
     </nav>
 <hr/>
 <div class="container-fluid">
@@ -85,7 +124,8 @@
             @foreach ($recos as $reco)
                 <div class="col-md-4">
                     <div class="card"  >
-                        <a id="card-x" class="close" href="/eliminar/{{$reco->nombre_url}}" >×</a>
+                        <a id="card-x" class="close" onclick="return confirm('¿Desea eliminar este recorrido?')" 
+                        href="/eliminar/{{$reco->nombre_url}}" >×</a>
                         <img class="card-img-top" src= "{{$reco->imagen}}">
                         <div class="card-body">
                             <h5 class="card-title">{{ $reco->nombre }}</h5>
