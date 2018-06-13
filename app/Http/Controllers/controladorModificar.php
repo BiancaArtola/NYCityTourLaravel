@@ -55,7 +55,7 @@ class controladorModificar extends Controller
 		$recorrido->imagen=$request->imagen;
 		$recorrido->puntos=$recorrido->puntos+$request->puntosPI;
 
-		//$recorrido->save();
+		$recorrido->save();
 		return redirect('/');
 	}
 }
